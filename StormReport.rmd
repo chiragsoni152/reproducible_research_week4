@@ -15,21 +15,6 @@ bunzip2("StormData.csv.bz2", "StormData.csv")
 df <- read.csv("StormData.csv")
 ```
 
-We don't need all the columns.
-```{r}
-reduced.storm.data <- 
-        storm.data[,c("EVTYPE", "FATALITIES", "INJURIES", "PROPDMG")]
-```
-
-Normalize event names.
-```{r}
-reduced.storm.data$EVTYPE <- 
-    gsub("^HEAT$", "EXCESSIVE HEAT", reduced.storm.data$EVTYPE)
-reduced.storm.data$EVTYPE <- 
-    gsub("^TSTM WIND$", "THUNDERSTORM WIND", reduced.storm.data$EVTYPE)
-reduced.storm.data$EVTYPE <- 
-    gsub("^THUNDERSTORM WIND$", "THUNDERSTORM WINDS", reduced.storm.data$EVTYPE)
-```
 
 Aggregate the data to look at health impact
 ```{r}
