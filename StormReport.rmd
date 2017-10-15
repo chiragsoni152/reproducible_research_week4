@@ -78,3 +78,9 @@ g <- ggplot(df.damage.total[1:10,], aes(x=reorder(EVTYPE, -TOTAL.DMG.EVTYPE), y=
 
 g
 ```
+
+
+
+
+
+
